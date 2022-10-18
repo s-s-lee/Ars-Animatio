@@ -9,3 +9,5 @@ fetch('https://api.github.com/repos/nodejs/node/issues?per_page=5', {
   .then(function (data) {
     console.log(data);
   });
+//Giphy apiKey
+  const apiKey1 = '3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH'
