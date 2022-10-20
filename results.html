@@ -9,17 +9,29 @@
 </head>
 
 <header>
-    <div class="content is-large">
+    <div class="container" id="header">
         <h1 class="has-text-white">Ars Animatio</h1>   
-        <div class="field">
+        <!-- <div class="field"> -->
         <input class="input" type="text" placeholder="Search">
-        <input class="button" type="submit" value="Submit">
-
+        <input class="button" type="submit" value="Submit">   
+    </div>
 </header>
 
+<body>
 <main>
-    
+    <div class="columns">
+        <div class="column">            
+          <div class="columns is-mobile">
+            <div class="column is-half" id="giphy-results">
+              <h2 class="is-size-4 has-text-white has-text-centered">GIPHY Results</h2>
+            </div>
+            <div class="column" id="wallhaven-results">
+              <h2 class="is-size-4 has-text-white has-text-centered">WallHaven Results</h2>
+            </div>
+          </div>
+        </div>
 </main>
+</body>
 
 <!-- <footer class="footer">
     <div class="content has-text-centered">
