@@ -1,11 +1,73 @@
-fetch('https://api.github.com/repos/nodejs/node/issues?per_page=5', {
-  method: 'GET', //GET is the default.
-  credentials: 'same-origin', // include, *same-origin, omit
-  redirect: 'follow', // manual, *follow, error
+const searchInput = document.getElementById("")
+const searchBtn = document.getElementById("")
+const history = document.getElementById("")
+const clearHistory = document.getElementById("")
+let searchHistory = JSON.parse(localStorage.getItem("search")) || []
+
+//Giphy apiKey
+const apiKey1 = '3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH'
+//wallhaven apiKey
+const apiKey2 = 'kDzUKzeCUb16O7WleQ9GG7GUMXkVOii0'
+
+searchBtn.addEventListener('click', search);
+
+function search() {
+	fetch('"https://api.giphy.com/v1/gifs/search?api_key=3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH="')
+		.then(response => response.json())
+		.then(data => {
+			result1.innerHTML = `<img src=${data.file} alt="wallpaper 1" />`
+		});
+}
+
+
+
+//search button functionality (API calls within eventListener to prevent calls from happening on search page)
+searchBtn.addEventListener("click", function () {
+  //brings user to results HTML page from index
+  window.location.replace("results.html")
+
+
+  // for loop setup for API call 1 
+  for (i = 0; i < 3; i++) {
+    //creates containers for gif outputs
+    const gifContainer = document.createElement("")
+  }
+
+
+  //for loop setup for API call 2
+  for (i = 0; i < 3; i++) {
+    //creates containers for wallpaper outputs
+    const WallpaperContainer = document.createElement("")
+  }
+
 })
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+
+function getImage() {
+	fetch('https://aws.random.cat/meow')
+		.then(res => res.json())
+		.then(data => {
+			cat_result.innerHTML = `<img src=${data.file} alt="cat" />`
+		});
+}
+
+//creates and appends search history
+function renderSearchHistory() {
+  history.innerHTML = ""
+  for (let i = 0; i < searchHistory.length; i++) {
+    const historyEl = document.createElement("input");
+    historyEl.setAttribute("type", "text");
+    historyEl.setAttribute("readonly", true);
+    historyEl.setAttribute("value", searchHistory[i]);
+    historyEl.setAttribute("class", "bg-secondary rounded text-light mt-3 mb-3")
+    historyEl.addEventListener("click", function () {
+      placeholder(historyEl.value);
+    })
+    history.append(historyEl);
+  }
+}
+
+//clears history on click
+clearHistory.addEventListener("click", function () {
+  searchHistory = [];
+  renderSearchHistory()
+})
