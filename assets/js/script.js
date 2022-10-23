@@ -42,13 +42,13 @@ function api1() {
 
 function api2() {
   fetch(`https://quote-garden.herokuapp.com/api/v3/quotes`)
-    // .then(response => response.json())
+    .then(response => response.json())
     .then(resData => {
       console.log(resData)
       for (i = 0; i < 3; i++) {
       //     // creates containers for gif outputs
           const quoteContainer = document.createElement("p")
-          quoteContainer.innerHTML = url
+          quoteContainer.innerHTML = resData.data[i].quoteText
           var quoteResults = document.querySelector("#quote-results")
           quoteResults.append(quoteContainer)
           searchResults.classList.remove("is-hidden")
