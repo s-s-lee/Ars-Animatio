@@ -15,7 +15,12 @@ const apiKey2 = '0ee7750f-1c0a-476b-8bca-77a33cfc6dd5'
 
 
 // //search button functionality (API calls within eventListener to prevent calls from happening on search page)
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", function CallBoth(){
+  api1();
+  api2()
+})
+
+function api1() {
   homescreen.style.display = "none"
   searchResults.style.display = "block"
   fetch(`https://api.giphy.com/v1/gifs/search?q=${searchInput.value}&api_key=${apiKey1}&limit=3`)
@@ -33,13 +38,10 @@ searchBtn.addEventListener("click", function () {
         searchResults.classList.remove("is-hidden")
       }
     })
-})
+}
+function api2() {
 
-
-
-searchBtn1.addEventListener("click", function () {
-
-  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput1.value}&classification=Paintings&apikey=${apiKey2}`)
+  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput.value}&classification=Paintings&apikey=${apiKey2}`)
     .then(response => response.json())
     .then(resData => {
       console.log(resData)
@@ -54,7 +56,7 @@ searchBtn1.addEventListener("click", function () {
         searchResults.classList.remove("is-hidden")
       }
     })
-})
+}
 
 //       fetch(`wallpaperapi`)
 //         .then(response => response.JSON())
