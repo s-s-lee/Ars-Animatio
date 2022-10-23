@@ -38,29 +38,21 @@ function api1() {
         searchResults.classList.remove("is-hidden")
       }
     })
-<<<<<<< HEAD
-})
-
-searchBtn1.addEventListener("click", function () {
-
-  fetch(`https://api.goprogram.ai/inspiration`)
-=======
 }
-function api2() {
 
-  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput.value}&classification=Paintings&apikey=${apiKey2}`)
->>>>>>> bfe12b2c6a49e7de5bedf235f3ab3a327cc75365
-    .then(response => response.json())
+function api2() {
+  fetch(`https://quote-garden.herokuapp.com/api/v3/quotes`)
+    // .then(response => response.json())
     .then(resData => {
       console.log(resData)
-      // for (i = 0; i < 3; i++) {
+      for (i = 0; i < 3; i++) {
       //     // creates containers for gif outputs
-      //     const gifContainer = document.createElement("img")
-      //     gifContainer.src = resData
-      //     var gifResults = document.querySelector("#art-results")
-      //     gifResults.append(gifContainer)
-      //     searchResults.classList.remove("is-hidden")
-      // }
+          const quoteContainer = document.createElement("p")
+          quoteContainer.innerHTML = url
+          var quoteResults = document.querySelector("#quote-results")
+          quoteResults.append(quoteContainer)
+          searchResults.classList.remove("is-hidden")
+      }
     })
 }
 
