@@ -15,8 +15,14 @@ const apiKey2 = '563492ad6f917000010000014e745c14ae944027b87993eea1ac6349'
 
 
 // //search button functionality (API calls within eventListener to prevent calls from happening on search page)
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", function CallBoth(){
+  api1();
+  api2()
+})
 
+function api1() {
+  homescreen.style.display = "none"
+  searchResults.style.display = "block"
   fetch(`https://api.giphy.com/v1/gifs/search?q=${searchInput.value}&api_key=${apiKey1}&limit=3`)
     // .then(response => console.log(response))
     .then(response => response.json())
@@ -32,11 +38,18 @@ searchBtn.addEventListener("click", function () {
         searchResults.classList.remove("is-hidden")
       }
     })
+<<<<<<< HEAD
 })
 
 searchBtn1.addEventListener("click", function () {
 
   fetch(`https://api.goprogram.ai/inspiration`)
+=======
+}
+function api2() {
+
+  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput.value}&classification=Paintings&apikey=${apiKey2}`)
+>>>>>>> bfe12b2c6a49e7de5bedf235f3ab3a327cc75365
     .then(response => response.json())
     .then(resData => {
       console.log(resData)
@@ -49,7 +62,7 @@ searchBtn1.addEventListener("click", function () {
       //     searchResults.classList.remove("is-hidden")
       // }
     })
-})
+}
 
 //       fetch(`wallpaperapi`)
 //         .then(response => response.JSON())
