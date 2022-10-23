@@ -23,6 +23,6 @@ body {
   height:0%;
 }
 
-#search-results {
+.is-hidden {
   display: none;
 }

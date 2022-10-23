@@ -1,23 +1,23 @@
-const searchInput = document.getElementById("userInput")
+const searchInput = document.getElementById("user-input")
 const searchBtn = document.getElementById("searchbutton")
 
-const searchInput1 = document.getElementById("userInput1")
+const searchInput1 = document.getElementById("user-input1")
 const searchBtn1 = document.getElementById("searchbutton1")
 // const history = document.getElementById("")
 // const clearHistory = document.getElementById("")
-// const search_result = document.getElementById("");
+const searchResults = document.getElementById("search-results");
 // let searchHistory = JSON.parse(localStorage.getItem("search")) || []
 
 // //Giphy apiKey
 const apiKey1 = '3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH'
 // //wallhaven apiKey
-// const apiKey2 = 'kDzUKzeCUb16O7WleQ9GG7GUMXkVOii0'
+const apiKey2 = '0ee7750f-1c0a-476b-8bca-77a33cfc6dd5'
 
 
 // //search button functionality (API calls within eventListener to prevent calls from happening on search page)
 searchBtn.addEventListener("click", function () {
 
-  fetch(`http://api.giphy.com/v1/gifs/search?q=${searchInput.value}&api_key=${apiKey1}&limit=3`)
+  fetch(`https://api.giphy.com/v1/gifs/search?q=${searchInput.value}&api_key=${apiKey1}&limit=3`)
     // .then(response => console.log(response))
     .then(response => response.json())
     .then(gifData => {
@@ -29,29 +29,31 @@ searchBtn.addEventListener("click", function () {
         gifContainer.src = gifData.data[i].images.original.url
         var gifResults = document.querySelector("#giphy-results")
         gifResults.append(gifContainer)
-              }  
+        searchResults.classList.remove("is-hidden")
+      }
     })
-  })
+})
 
 
 
-    // searchBtn1.addEventListener("click", function () {
+searchBtn1.addEventListener("click", function () {
 
-    //   fetch(`http://api.giphy.com/v1/gifs/search?q=${searchInput1.value}&api_key=${apiKey1}&limit=3`)
-    //     // .then(response => console.log(response))
-    //     .then(response => response.json())
-    //     .then(gifData => {
-    //       console.log(gifData)
-    //       for (i = 0; i < 3; i++) {
-    
-    //         //creates containers for gif outputs
-    //         const gifContainer = document.createElement("img")
-    //         gifContainer.src = gifData.data[i].images.original.url
-    //         var gifResults = document.querySelector("#giphy-results")
-    //         gifResults.append(gifContainer)
-    //               }  
-    //     })
-    //   })
+  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput1.value}&classification=Paintings&apikey=${apiKey2}`)
+    .then(response => response.json())
+    .then(resData => {
+      console.log(resData)
+      for (i = 0; i < 3; i++) {
+        if (resData.records[i].images.length) {
+          // creates containers for gif outputs
+          const gifContainer = document.createElement("img")
+          gifContainer.src = resData.records[i].images[0].baseimageurl
+          var gifResults = document.querySelector("#art-results")
+          gifResults.append(gifContainer)
+        }
+        searchResults.classList.remove("is-hidden")
+      }
+    })
+})
 
 //       fetch(`wallpaperapi`)
 //         .then(response => response.JSON())
