@@ -11,7 +11,7 @@ const searchResults = document.getElementById("search-results");
 // //Giphy apiKey
 const apiKey1 = '3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH'
 // //wallhaven apiKey
-const apiKey2 = '0ee7750f-1c0a-476b-8bca-77a33cfc6dd5'
+const apiKey2 = '563492ad6f917000010000014e745c14ae944027b87993eea1ac6349'
 
 
 // //search button functionality (API calls within eventListener to prevent calls from happening on search page)
@@ -34,24 +34,20 @@ searchBtn.addEventListener("click", function () {
     })
 })
 
-
-
 searchBtn1.addEventListener("click", function () {
 
-  fetch(`https://api.harvardartmuseums.org/object?title=${searchInput1.value}&classification=Paintings&apikey=${apiKey2}`)
+  fetch(`https://api.goprogram.ai/inspiration`)
     .then(response => response.json())
     .then(resData => {
       console.log(resData)
-      for (i = 0; i < 3; i++) {
-        if (resData.records[i].images.length) {
-          // creates containers for gif outputs
-          const gifContainer = document.createElement("img")
-          gifContainer.src = resData.records[i].images[0].baseimageurl
-          var gifResults = document.querySelector("#art-results")
-          gifResults.append(gifContainer)
-        }
-        searchResults.classList.remove("is-hidden")
-      }
+      // for (i = 0; i < 3; i++) {
+      //     // creates containers for gif outputs
+      //     const gifContainer = document.createElement("img")
+      //     gifContainer.src = resData
+      //     var gifResults = document.querySelector("#art-results")
+      //     gifResults.append(gifContainer)
+      //     searchResults.classList.remove("is-hidden")
+      // }
     })
 })
 
