@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,30 +9,26 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<header>
-  <div class="container" id="header">
-    <h1 class="has-text-white">Ars Animatio</h1>
-    <!-- <div class="field"> -->
-    <input class="input" type="text" placeholder="Search">
-    <input class="button" type="submit" value="Search">   
-  </div>
-</header>
-
 <body>
+  <header>
+    <div class="container" id="header">
+      <h1 class="has-text-white is-hidden">Ars Animatio</h1>
+    </div>
+  </header>
   <!-- created sections so that the child (container) will be centered -->
   <!-- large section may make the results screen look too low -->
-  <section class="section is-large">
+  <section class="section" id="searchContainer">
     <div class="container" id="homescreen">
       <div class="homescreen">
-        <h1 class="is-size-1 has-text-white has-text-centered pb-5">Ars Animatio</h1>        
+        <h1 class="is-size-1 has-text-white has-text-centered pb-5">Ars Animatio</h1>
       </div>
     </div>
 
     <!-- Restructured and added id user-input -->
     <div class="container">
       <div class="input">
-          <input class="input" id="user-input" type="text" placeholder="Search">
-          <input class="button" id="searchbutton" type="submit" value="Search">
+        <input class="input" id="user-input" type="text" placeholder="Search">
+        <input class="button" id="searchbutton" type="submit" value="Search">
       </div>
       <div class="input">
         <input class="input" id="user-input1" type="text" placeholder="Search">
@@ -48,9 +45,6 @@
           <div class="column is-half" id="giphy-results">
             <h2 class="is-size-4 has-text-white has-text-centered">GIPHY Results</h2>
             <!-- iframe with specified ratio for gif results -->
-            <figure class="image">
-              <iframe class="has-ratio" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe>
-            </figure>
           </div>
           <div class="column" id="art-results">
             <h2 class="is-size-4 has-text-white has-text-centered">WallHaven Results</h2>
@@ -63,11 +57,11 @@
       </div>
     </div>
   </section>
-  
- <!-- <a href="http://jquery.com/">jQuery</a> -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
- <script src="./assets/js/script.js"></script>   
+
+  <!-- <a href="http://jquery.com/">jQuery</a> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 <!-- <footer class="footer">

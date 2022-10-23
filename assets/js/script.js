@@ -16,7 +16,8 @@ const apiKey2 = '0ee7750f-1c0a-476b-8bca-77a33cfc6dd5'
 
 // //search button functionality (API calls within eventListener to prevent calls from happening on search page)
 searchBtn.addEventListener("click", function () {
-
+  homescreen.style.display = "none"
+  searchResults.style.display = "block"
   fetch(`https://api.giphy.com/v1/gifs/search?q=${searchInput.value}&api_key=${apiKey1}&limit=3`)
     // .then(response => console.log(response))
     .then(response => response.json())
