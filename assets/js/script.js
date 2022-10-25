@@ -3,7 +3,7 @@ const searchBtn = document.getElementById("searchbutton")
 var searchInput1 = document.getElementById("user-input1")
 const searchBtn1 = document.getElementById("searchbutton1")
 const history = document.getElementById("history")
-// const clearHistory = document.getElementById("")
+const clearHistory = document.getElementById("clearHistory")
 var searchResults = document.getElementById("search-results")
 let searchHistory = JSON.parse(localStorage.getItem("search")) || []
 
@@ -55,12 +55,12 @@ function api2() {
       quoteResults.innerHTML = ""
       for (i = 0; i < 1; i++) {
 
-          // creates containers for gif outputs
-          var quoteContainer = document.createElement("h3")
-          quoteContainer.innerHTML = resData.joke
-          var quoteResults = document.querySelector("#quote-results")
-          quoteResults.append(quoteContainer)
-          searchResults.classList.remove("is-hidden")
+        // creates containers for gif outputs
+        var quoteContainer = document.createElement("h3")
+        quoteContainer.innerHTML = resData.joke
+        var quoteResults = document.querySelector("#quote-results")
+        quoteResults.append(quoteContainer)
+        searchResults.classList.remove("is-hidden")
       }
     })
 }
@@ -72,6 +72,7 @@ function renderSearchHistory() {
     const historyEl = document.createElement("input");
     historyEl.setAttribute("type", "text");
     historyEl.setAttribute("readonly", true);
+    historyEl.setAttribute("class", "input is-rounded")
     historyEl.setAttribute("value", searchHistory[i]);
     historyEl.addEventListener("click", function () {
       currentSearch = historyEl.value
@@ -83,7 +84,7 @@ function renderSearchHistory() {
 }
 
 //clears history on click
-// clearHistory.addEventListener("click", function () {
-//   searchHistory = [];
-//   renderSearchHistory()
-// })
+clearHistory.addEventListener("click", function () {
+  searchHistory = [];
+  renderSearchHistory()
+})

@@ -33,3 +33,12 @@ h3 {
 .is-hidden {
   display: none;
 }
+
+.historyButton{
+border-radius: 10px;
+}
+
+.historyButton:hover{
+  border-radius: 10px;
+  opacity: .5;
+  }
