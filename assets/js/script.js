@@ -54,21 +54,13 @@ function api2() {
       var quoteResults = document.querySelector("#quote-results")
       quoteResults.innerHTML = ""
       for (i = 0; i < 1; i++) {
-<<<<<<< HEAD
-        // creates containers for gif outputs
-        var quoteContainer = document.createElement("p")
-        quoteContainer.innerHTML = resData.joke
-        var quoteResults = document.querySelector("#quote-results")
-        quoteResults.append(quoteContainer)
-        searchResults.classList.remove("is-hidden")
-=======
+
           // creates containers for gif outputs
           var quoteContainer = document.createElement("h3")
           quoteContainer.innerHTML = resData.joke
           var quoteResults = document.querySelector("#quote-results")
           quoteResults.append(quoteContainer)
           searchResults.classList.remove("is-hidden")
->>>>>>> main
       }
     })
 }
