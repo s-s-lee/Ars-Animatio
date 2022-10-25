@@ -43,7 +43,7 @@ function api1() {
 }
 
 function api2() {
-  fetch(`https://quote-garden.herokuapp.com/api/v3/quotes`)
+  fetch(`https://geek-jokes.sameerkumar.website/api?format=json`)
     .then(response => response.json())
     .then(resData => {
       console.log(resData)
@@ -52,7 +52,7 @@ function api2() {
       for (i = 0; i < 1; i++) {
           // creates containers for gif outputs
           var quoteContainer = document.createElement("p")
-          quoteContainer.innerHTML = resData.data[i].quoteText
+          quoteContainer.innerHTML = resData.joke
           var quoteResults = document.querySelector("#quote-results")
           quoteResults.append(quoteContainer)
           searchResults.classList.remove("is-hidden")
