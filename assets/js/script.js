@@ -7,18 +7,6 @@ const history = document.getElementById("history")
 var searchResults = document.getElementById("search-results")
 let searchHistory = JSON.parse(localStorage.getItem("search")) || []
 
-fetch('https://api.github.com/repos/nodejs/node/issues?per_page=5', {
-  method: 'GET', //GET is the default.
-  credentials: 'same-origin', // include, *same-origin, omit
-  redirect: 'follow', // manual, *follow, error
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
-
 //Giphy apiKey
 const apiKey1 = '3aOkUhqhHeSCKZu7WjMvBl1hPZu2xPSH'
 // //Quote Garden apiKey
