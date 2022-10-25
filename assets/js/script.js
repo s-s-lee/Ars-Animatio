@@ -49,7 +49,7 @@ function api2() {
       quoteResults.innerHTML = ""
       for (i = 0; i < 1; i++) {
           // creates containers for gif outputs
-          var quoteContainer = document.createElement("p")
+          var quoteContainer = document.createElement("h3")
           quoteContainer.innerHTML = resData.joke
           var quoteResults = document.querySelector("#quote-results")
           quoteResults.append(quoteContainer)
