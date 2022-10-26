@@ -27,7 +27,7 @@ Our Tasks were as follows:
 -Asia and Susan primarily worked on the HTML and CSS files.
 -Rashan and Rick primarily worked on the JavaScript file.
 
-### APIs you plan to use or Technology
+## APIs we used
 We used 2 different API's for our wesite. To generate our wallpaper we used giphy.com Here is the link! <a href="https://api.giphy.com"> And, to generate our quotes we used the API linked below
 <a href="https://geek-jokes.sameerkumar.website/api?">.
 
