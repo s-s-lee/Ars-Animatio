@@ -1,8 +1,23 @@
 # ARS-Animatio
-Creating a search engine that supplies wallpaper similar to a scene from an anime
+A search engine to make you smile 😆
+
+## Project Description
+With one search, get a GIF and a random programming joke!
 
 ## Collaborators
 - Asia
-- Rasahn
+- Rahsan
+- Rick
 - Susan
-- Rick 
+
+## Site Preview
+
+https://rahsanlewis.github.io/ARS-Animatio/
+
+<img alt="screenshot of Ars Animatio's website" src="./assets/images/ars-animatio-screenshot.png" />
+
+### Background Image Credit
+
+Credit:
+
+NASA, ESA and the [Hubble SM4 ERO Team](https://esahubble.org/images/heic0910n/)

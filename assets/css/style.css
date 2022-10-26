@@ -1,18 +1,25 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-body {
-  /* image source is https://wallhaven.cc/w/5755g1 */
-  background-image: url("https://w.wallhaven.cc/full/57/wallhaven-5755g1.jpg");
+html {
+  background-image: url("https://cdn.spacetelescope.org/archives/images/screen/heic0910n.jpg");
   background-color: #303030;
-  height: 100vh;
   background-position: center;
-  /* unsure if search results need this CSS yet
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center; */
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.75em;
+  color:white;
+}
+
+.section {
+  align-content: center;
+  text-align: center;
 }
 
 #header {
@@ -20,9 +27,28 @@ body {
 }
 
 #user-input {
-  height:0%;
+  height: 1;
 }
 
 #search-results {
+  text-align-last: center;
+}
+
+.is-hidden {
   display: none;
+}
+
+.historyButton{
+  border-radius: 10px;
+}
+
+.historyButton:hover{
+  border-radius: 10px;
+  opacity: .5;
+}
+
+.footer {
+  background-color: unset;
+  padding: 3rem 1.5rem 4rem;
+  color: white;
 }
