@@ -12,7 +12,7 @@ With one search, get a GIF and a random programming joke!
 
 ## Site Preview
 
-https://rahsanlewis.github.io/ARS-Animatio/
+https://s-s-lee.github.io/Ars-Animatio/
 
 <img alt="screenshot of Ars Animatio's website" src="./assets/images/ars-animatio-screenshot.png" />
 
